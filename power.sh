@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
+ICON_DIR="$HOME/.config/rofi/icons"
 
-case "$(printf "kill\nzzz\nreboot\nshutdown" | rofi -dmenu -i -c -l 4 -theme /home/ego/.config/rofi/satriaSimple.rasi -p " " )" in
-	kill) ps -u $USER -o pid,comm,%cpu,%mem |rofi -dmenu -i -c -l 10 -theme /home/ego/.config/rofi/satriaSimple.rasi -p " " | awk '{print $1}' | xargs -r kill ;;
-	zzz) hyprlock ;;
-	reboot) systemctl reboot -i ;;
-	shutdown) shutdown now ;;
-	*) exit 1 ;;
-esac
+if pgrep -x rofi >/dev/null; then
+  pkill rofi
+else
+  # Format: Teks Menu\0icon\x1fPathKeGambar
+  LIST="istirahat bentar yah\0icon\x1f$ICON_DIR/suspend.png\nmulai ulang yuk\0icon\x1f$ICON_DIR/reboot.png\ntidur bentar yaa\0icon\x1f$ICON_DIR/shutdown.png"
+
+  CHOICE=$(echo -e "$LIST" | rofi -dmenu -i -theme ~/.config/rofi/satriaSimpledmenunsearch.rasi -p " ")
+
+  case "$CHOICE" in
+  *istirahat*) systemctl suspend ;;
+  *mulai*) systemctl reboot -i ;;
+  *tidur*) shutdown now ;;
+  *) exit 1 ;;
+  esac
+fi

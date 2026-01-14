@@ -1,26 +1,35 @@
 #!/bin/bash
 
-# Simple Wallpaper Selector with thumbnails for swww
-# Usage: ./wallChange.sh
+WALLPAPER_DIR="$HOME/media/picture/wallpaper"
+CACHE_DIR="$HOME/.cache/rofi-wallpapers"
+mkdir -p "$CACHE_DIR"
 
-# Configuration
-WALLPAPER_DIR="$HOME/Downloads/picture/wallpaper/"  # Change this path
-cd "$WALLPAPER_DIR" || { echo "Directory not found: $WALLPAPER_DIR"; exit 1; }
+if pgrep -x rofi >/dev/null; then
+  pkill rofi
+  exit 0
+fi
 
-# Simple one-liner approach with thumbnails
-SELECTED_WALL=$(for a in *.jpg *.jpeg *.png *.webp *.bmp; do 
-    [ -f "$a" ] && echo -en "$a\0icon\x1f$PWD/$a\n"
-done | rofi -dmenu -show-icons -theme /home/ego/.config/rofi/satriaSimpleww.rasi -p "󰸉 ")
+find "$CACHE_DIR" -type f | while read -r thumb; do
+  filename=$(basename "$thumb")
+  [ ! -f "$WALLPAPER_DIR/$filename" ] && rm "$thumb"
+done
 
-# Set wallpaper if selected
+generate_list() {
+  for img in "$WALLPAPER_DIR"/*.{jpg,jpeg,png,webp,bmp}; do
+    [ -e "$img" ] || continue
+    filename=$(basename "$img")
+    thumb="$CACHE_DIR/$filename"
+
+    if [ ! -f "$thumb" ]; then
+      magick "$img" -thumbnail 200x200 -quality 80 "$thumb"
+    fi
+
+    echo -en "$filename\0icon\x1f$thumb\n"
+  done
+}
+SELECTED_WALL=$(generate_list | rofi -dmenu -show-icons -theme "$HOME/.config/rofi/satriaSimpleww.rasi")
 if [ -n "$SELECTED_WALL" ]; then
-    # Start swww daemon if not running
-    pgrep -x "swww-daemon" > /dev/null || { swww-daemon & sleep 2; }
-    
-    # Set the wallpaper
-    swww img "$WALLPAPER_DIR/$SELECTED_WALL" --transition-type wipe --transition-duration 1
-    
-    echo "Wallpaper changed to: $SELECTED_WALL"
-else
-    echo "No wallpaper selected"
+  swww img "$WALLPAPER_DIR/$SELECTED_WALL" --transition-type wipe --transition-angle 270 --transition-duration 3 --transition-step 240 --transition-fps 120
+  notify-send "Selesai, Nii-san!" "\nWallpaper dirubahh..ya!" -i ~/media/picture/asset/notify/changeWallpaper.jpg
+
 fi
