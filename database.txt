@@ -1,12 +1,12 @@
-🥵 Kepanasan | hot | menggoda
-🤤 Ngiler | sedap | pengen
-🫢 Diam | rahasia | tutupMulut
-🤭 malu | aduh
-💀 Tengkorak | mati | mengerikan
-🤓 Pintar | nerd
-😋 Laper | lezat
-🤨 Ragu | heran
-🥺 Memelas | minta
+🥵 Kepanasan | Hot | Menggoda
+🤤 Ngiler | Sedap | Pengen
+🫢 Diam | Rahasia | tutupMulut
+🤭 Malu | Aduh
+💀 Tengkorak | Mati | mengerikan
+🤓 Pintar | Nerd | Cerdas
+😋 Laper | Menggoda | Lezat
+🤨 Ragu | Curiga | Heran
+🥺 Memelas | Memohon
 😳 Malu | kaget
 😨 Takut | mengerikan
 😦 Kaget | tercengang
@@ -14,19 +14,19 @@
 🤢 Mual
 🥱 Mengantuk
 🤮 Muntah
-😈 Jahat | nakal
+😈 Jahat | Kejam | Nakal
 🤡 Badut
-🧠 Otak | pintar | cerdas
-🗣 Berbicara | speak
-🫶🏼 Hati tangan | cinta
+🧠 Otak | Pintar
+🗣 Berbicara | Speak
+🫶🏼 Hati tangan | Cinta
 🐧 Penguin | linux
-🐞 Kumbang
-🐛 Ulat
-🐍 Ular
-🌚 Bulan gelap
-🥛 Susu
-🎲 Dadu
-🗿 Moai | emot batu
-💔 Hati patah | 
-
-
+🐞 Kumbang | Bug
+🐛 Ulat | Menggeliat
+🐍 Ular | Python
+🌚 Bulan
+🥛 Susu | Milk
+🎲 Dadu 
+🗿 Moai | Emot Batu
+💔 Terluka 
+🥰 Cinta | Sayang
+😡 Marah | Murka

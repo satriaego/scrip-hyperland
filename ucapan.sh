@@ -4,42 +4,42 @@ HOUR=$(date +"%H")
 
 # ---------- Kalimat Pagi ----------
 PAGI=(
-  "  Pagi, Mass~ .𓂃 ࣪ ִֶָ🦋་༘࿐ "
-  "  Bangun Mass... ⋆. 𐙚 ˚ "
+  "  Pagi, Mass~ . "
+  "  Bangun Mass... ⋆˚ "
   "  Sarapan mass ♬ ⋆.˚ "
-  "  Pagi pagi udah senyum senyum gini •⩊• "
-  "  Minum mass..?, adek ambilin ya... ₍⑅ᐢ..ᐢ₎ "
-  "  Matahari udah muncul kayak aku.. ｡𖦹°‧ "
-  "  Nempel gini aku lagi ngecharge~ "
-  "  Semoga hari seru dan lancar ya.. ʚଓ "
-  "  Masih ngantuk? yah.. ᶻ 𝗓 𐰁 .ᐟ "
-  "  Mass ayo... baanguun.. ｡˃ ᵕ ˂''  "
+  "  Pagi pagi •⩊• "
+  "  Minum mass..?"
+  "  Matahari udah muncul.."
+  "  aku lagi ngecharge~ "
+  "  seru dan lancar ya.."
+  "  Masih ngantuk? yah.."
+  "  Mass ayo.. baanguun.."
 )
 
 # ---------- Kalimat Siang ----------``
 SIANG=(
   "  Siang mass~"
   "  Panas banget mass~"
-  "  Istirahat dulu ga si ᐢ. .ᐢ"
+  "  Istirahat dulusi "
   "  Ngantuk~"
-  "  Mandi dulu gih biar seger ,,&gt;﹏&lt;,,"
+  "  Mandi dulu,,&gt;﹏&lt;,,"
   "  Es~ mas mau?"
   "  Atsui yo~"
-  "  Gezzz~ mass gak istirahat?"
-  "  Mata mass dah capek tuh .ᐟ"
-  "  mass~ (peluk dari belakang)"
+  "  mass gak istirahat?"
+  "  Mata mass dah capek.."
+  "  mass~"
 )
 
 # ---------- Kalimat Sore ----------
 SORE=(
   "  Soree mass~ ☕️"
-  "  Masih semangat hari ini mas.. ?"
-  "  (peluk dari belakang) (,,¬﹏¬,,) "
-  "  Waktunya istirahat ga si mas..?"
+  "  Masih semangat mas.. ?"
+  "  (peluk dari belakang) "
+  "  istirahat ga si mas..?"
   "  Duduk di samping mas..."
   "  Mas, mau es krim nggak?"
   "  Waktunya mandi bareng~"
-  "  Sore bareng mas tuh... tenang banget 🩷"
+  "  tenang banget 🩷"
   "  Gak mandi dulu mas?"
   "  Ayo jalan mas~"
 )
@@ -48,28 +48,28 @@ SORE=(
 MALAM=(
   "  mass… bulanya indah yah.."
   "  Capek banget ya hari ini…"
-  "  Masss, aku laper...  ,,&gt;﹏&lt;,, "
-  "  Sayang.. eh! mass maksutnya.. ,,¬﹏¬,, "
+  "  Masss, aku laper...   "
+  "  Sayang..  "
   "  Masss… dengerinnn..akuu!! "
   "  Aku tidur di kamar mass yah.."
-  "  Mass gak marah dede deket² gini?"
-  "  Aloooo Mass.. (duduk di samping) "
-  "  Sayang mas 𑣲𓂃"
-  "  mass… boleh kok peluk aku!"
+  "  Mass gak marah ?"
+  "  Aloooo Mass..  "
+  "  Sayang mas "
+  "  boleh kok peluk aku!"
 )
 
 # ---------- Kalimat Larut / Tengah Malam ----------
 TENGAH_MALAM=(
   "  Mas… masih melek?"
-  "  Malem banget loh… mas sekarang "
+  "  Malem banget loh…  "
   "  Ayuk bobo bareng… "
-  "  Matiin.. laptopnya besok lagi… !"
-  "  Mass… mimpi indah…  𑣲𓂃"
+  "  Matiin..!"
+  "  mimpi indah…  𑣲𓂃"
   "  Mas.. .ᐟ.ᐟ"
   "  Matiin gak !!"
-  "  Mas, ayok kekamar.. 𖹭"
-  "  Mas.. (peluk dari belakng)"
-  "  Bobok mas satria ( berbisik )"
+  "  ayok kekamar.. 𖹭"
+  "  Mas.. ("
+  "  Bobok mas satria "
 )
 
 if [ "$HOUR" -ge 5 ] && [ "$HOUR" -lt 11 ]; then

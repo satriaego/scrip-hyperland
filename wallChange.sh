@@ -29,7 +29,7 @@ generate_list() {
 }
 SELECTED_WALL=$(generate_list | rofi -dmenu -show-icons -theme "$HOME/.config/rofi/satriaSimpleww.rasi")
 if [ -n "$SELECTED_WALL" ]; then
-  swww img "$WALLPAPER_DIR/$SELECTED_WALL" --transition-type wipe --transition-angle 270 --transition-duration 3 --transition-step 240 --transition-fps 120
+  awww img "$WALLPAPER_DIR/$SELECTED_WALL" --transition-type wipe --transition-angle 270 --transition-duration 3 --transition-step 240 --transition-fps 120
   notify-send "Selesai, Nii-san!" "\nWallpaper dirubahh..ya!" -i ~/media/picture/asset/notify/changeWallpaper.jpg
 
 fi

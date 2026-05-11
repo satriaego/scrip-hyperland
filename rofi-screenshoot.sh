@@ -20,13 +20,13 @@ else
   fi
 
   if $RECORDING; then
-    MAIN=$(echo -e "Ss\nStop merekamnya" | rofi -i -dmenu -theme "$ROFI_THEME" -p " ")
+    MAIN=$(echo -e "Screenshot\nStop merekamnya" | rofi -i -dmenu -theme "$ROFI_THEME" -p " ")
   else
-    MAIN=$(echo -e "Ss\nMerekam" | rofi -dmenu -i -theme "$ROFI_THEME" -p " ")
+    MAIN=$(echo -e "Screenshot\nMerekam" | rofi -dmenu -i -theme "$ROFI_THEME" -p " ")
   fi
 
   case "$MAIN" in
-  "Ss")
+  "Screenshot")
     MODE=$(echo -e "Fullscreen\nMilih area" | rofi -i -dmenu -theme "$ROFI_THEME" -p " ")
     case "$MODE" in
     "Fullscreen")
@@ -92,8 +92,7 @@ else
     # Simpan sementara di /tmp agar tidak nyampah di folder video sebelum dipilih
     TEMP_REC="/tmp/recording-$(date +%Y%m%d-%H%M%S).mp4"
 
-    wf-recorder -r 60 -c libx264rgb -b 30000k -f "$TEMP_REC" -a "$AUDIO_SRC" &
-
+    wf-recorder -g "0,0 1920x1200" -p colorrange=pc -r 60 -c libx264rgb -b 30000k -f "$TEMP_REC" -a "$AUDIO_SRC" &
     echo $! >"$PID_FILE"
     # Simpan path file sementara ke file lain agar bisa dibaca saat stop
     echo "$TEMP_REC" >"/tmp/wf-recorder.path"
